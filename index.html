@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- 每5秒刷新一次 -->
-        <meta content-type="refresh" content="5">
+        <!--<meta http-equiv="refresh" content="5">-->
         <meta charset="utf-8">
         <title>web-learning</title>
     </head>
@@ -13,11 +13,36 @@
         <!-- Block & inline -->
         <em>H</em><em>e</em><strong>llo</strong>
         <p>H</p><p>e</p><p>ll</p><p>o</p>
-        <img src="microsoft-gray.png"/>
+        <!-- Empty Element -->
+        <img src="./microsoft-gray.png"/>
+        <!-- Attribute -->
         <p>
             <a href="http://www.helloworld.org/" title="用不同的语言实现hello world的网站" target="_blank">
                 Hello
             </a>
+        </p>
+        <!-- Text attribute -->
+        <!-- Text size -->
+        <p><span style="font-size:32px;margin:21px 0;">Hello</span></p>
+        <!-- Text color -->
+        <p><span style="font-size:34px;margin:21px 0;color:blue">Hello</span></p>
+        <!-- Text Backgroud color -->
+        <p>
+            <span style="font-size:34px;margin:21px 0;color:#090;line-height:4.2;background:#990">
+                Hello
+            </span>
+        </p>
+        <!-- Text margin -->
+        <p style="background:red">
+            <span style="font-size:34px;margin:10px 100px 10px 200px;color:#090;line-height:20.2;background:#990">
+                Hello
+            </span>
+        </p>
+        <!-- Text font family -->
+        <p>
+            <span style="font-size:34px;margin:10px 100px 10px 200px;color:#090;font-family:'Times New Roman', Times, serif">
+                Hello
+            </span>
         </p>
     </body>
 </html>
