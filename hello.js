@@ -78,23 +78,18 @@ var map = {
     "mul-2": "2",
     "mul-3": "3",
     "mul-4": "4",
+    "mul-5": "5",
+    "mul-6": "6",
+    "mul-7": "7",
+    "mul-8": "8",
+    "mul-9": "9",
+    "mul-0": "0",
     "mul-*": "*"
 }
 
-var elementKey = "mul-1";
-createButton(elementKey, map[elementKey]);
-
-var elementKey = "mul-2";
-createButton(elementKey, map[elementKey]);
-
-var elementKey = "mul-3";
-createButton(elementKey, map[elementKey]);
-
-var elementKey = "mul-4";
-createButton(elementKey, map[elementKey]);
-
-var elementKey = "mul-*";
-createButton(elementKey, map[elementKey]);
+for(let item in map) {
+    createButton(item, map[item]);
+}
 
 document.querySelector('#equal').onclick = resultClickHandler;
 document.querySelector('#clear').onclick = clearResultHandler;
