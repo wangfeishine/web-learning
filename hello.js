@@ -77,7 +77,28 @@ function resultClickHandler(event) {
     appendResult(mul(inputArray[0], inputArray[1]));
 }
 
-document.querySelector('input[name="cal-1"]').onclick = buttonClickHandler;
-document.querySelector('input[name="cal-2"]').onclick = buttonClickHandler;
-document.querySelector('input[name="opt-mul"]').onclick = buttonClickHandler;
-document.querySelector('input[name="equal"]').onclick = resultClickHandler;
+function clearResultHandler(event) {
+    inputArray = [];
+    document.querySelector('.result').innerHTML = '';
+}
+
+function createButton(id, value) {
+    var numberButtonElement = document.createElement("input");
+    numberButtonElement.setAttribute("type", "button");
+    numberButtonElement.setAttribute("id", id);
+    numberButtonElement.setAttribute("value", value);
+    return numberButtonElement;
+}
+
+for(let i = 1; i < 5; i++) {
+    document.querySelector('.calculate').appendChild(createButton("cal-"+i, i));
+}
+
+var numberButtons = ['cal-1', 'cal-2', 'cal-3', 'cal-4', 'opt-mul'];
+
+for(let i = 0; i < numberButtons.length; i++) {
+    let completeName = '#' + numberButtons[i];
+    document.querySelector(completeName).onclick = buttonClickHandler;
+}
+document.querySelector('#equal').onclick = resultClickHandler;
+document.querySelector('#clear').onclick = clearResultHandler;
