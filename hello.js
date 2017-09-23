@@ -36,27 +36,7 @@ document.querySelector('input[name="onenumber"]').onclick = function() {
 document.querySelector('input[name="twonumber"]').onclick = function() {
     document.querySelector('.result').innerHTML = '2';
 }
-/*
-document.querySelector('input[name="onenumber1"]').onclick = function() {
-    number1 = document.querySelector('input[name="onenumber1"]').value
-}
 
-document.querySelector('input[name="twonumber1"]').onclick = function() {
-    number2 = document.querySelector('input[name="twonumber1"]').value
-}
-
-document.querySelector('input[name="operatormul"]').onclick = function() {
-    operator = document.querySelector('input[name="operatormul"]').value
-}
-
-document.querySelector('input[name="equal"]').onclick = function() {
-    switch (operator) {
-        case "*" :
-            document.querySelector('.result').innerHTML = mul(number1, number2);
-            break;
-    }
-}
-*/
 var inputArray = [];
 function appendResult(content) {
     var result = document.querySelector('.result');
@@ -87,18 +67,34 @@ function createButton(id, value) {
     numberButtonElement.setAttribute("type", "button");
     numberButtonElement.setAttribute("id", id);
     numberButtonElement.setAttribute("value", value);
+    numberButtonElement.onclick = buttonClickHandler;
+    document.querySelector('.calculate').appendChild(numberButtonElement);
+
     return numberButtonElement;
 }
 
-for(let i = 1; i < 5; i++) {
-    document.querySelector('.calculate').appendChild(createButton("cal-"+i, i));
+var map = {
+    "mul-1": "1",
+    "mul-2": "2",
+    "mul-3": "3",
+    "mul-4": "4",
+    "mul-*": "*"
 }
 
-var numberButtons = ['cal-1', 'cal-2', 'cal-3', 'cal-4', 'opt-mul'];
+var elementKey = "mul-1";
+createButton(elementKey, map[elementKey]);
 
-for(let i = 0; i < numberButtons.length; i++) {
-    let completeName = '#' + numberButtons[i];
-    document.querySelector(completeName).onclick = buttonClickHandler;
-}
+var elementKey = "mul-2";
+createButton(elementKey, map[elementKey]);
+
+var elementKey = "mul-3";
+createButton(elementKey, map[elementKey]);
+
+var elementKey = "mul-4";
+createButton(elementKey, map[elementKey]);
+
+var elementKey = "mul-*";
+createButton(elementKey, map[elementKey]);
+
 document.querySelector('#equal').onclick = resultClickHandler;
 document.querySelector('#clear').onclick = clearResultHandler;
