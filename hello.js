@@ -18,3 +18,66 @@ function showResult() {
     var y = document.querySelector('input[name="y"]').value;
     document.querySelector('#div_result').innerHTML = mul(x, y);
 }
+
+document.querySelector('input[name="showResult"]').onclick = () => showResult();
+
+/*
+document.querySelector('html').onclick = function() {
+    alert('Hello Event');
+}
+*/
+
+var number1,number2;
+var operator;
+document.querySelector('input[name="onenumber"]').onclick = function() {
+    document.querySelector('.result').innerHTML = '1';
+}
+
+document.querySelector('input[name="twonumber"]').onclick = function() {
+    document.querySelector('.result').innerHTML = '2';
+}
+/*
+document.querySelector('input[name="onenumber1"]').onclick = function() {
+    number1 = document.querySelector('input[name="onenumber1"]').value
+}
+
+document.querySelector('input[name="twonumber1"]').onclick = function() {
+    number2 = document.querySelector('input[name="twonumber1"]').value
+}
+
+document.querySelector('input[name="operatormul"]').onclick = function() {
+    operator = document.querySelector('input[name="operatormul"]').value
+}
+
+document.querySelector('input[name="equal"]').onclick = function() {
+    switch (operator) {
+        case "*" :
+            document.querySelector('.result').innerHTML = mul(number1, number2);
+            break;
+    }
+}
+*/
+var inputArray = [];
+function appendResult(content) {
+    var result = document.querySelector('.result');
+    result.innerHTML += content;
+}
+
+function buttonClickHandler(event) {
+    var value = event.target.value;
+    var number = Number(value);
+    if (number) {
+        inputArray.push(number);
+    }
+    appendResult(value);
+}
+
+function resultClickHandler(event) {
+    buttonClickHandler(event);
+    appendResult(mul(inputArray[0], inputArray[1]));
+}
+
+document.querySelector('input[name="cal-1"]').onclick = buttonClickHandler;
+document.querySelector('input[name="cal-2"]').onclick = buttonClickHandler;
+document.querySelector('input[name="opt-mul"]').onclick = buttonClickHandler;
+document.querySelector('input[name="equal"]').onclick = resultClickHandler;
