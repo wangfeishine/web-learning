@@ -25,6 +25,19 @@ li {
     background: red;
 }
 
+body{
+    width: 1200px;
+    margin: 0 auto;
+    background: blue;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px 0;
+    color: red;
+    text-shadow: 3px 4px 4px black;
+}
+
 #css-box-demo {
     width: 600px;
     height: 600px;
@@ -71,4 +84,9 @@ li {
 
 #css-demo-unit-percent {
     margin: 0 20%; 
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
