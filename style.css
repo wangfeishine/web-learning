@@ -42,3 +42,33 @@ li {
     margin: 50px auto;
     text-align: center;
 }
+
+#css-demo-unit-em {
+    margin： 10px 50em;
+}
+
+.css-demo-unit {
+    background: lightgray;
+    border: 2px solid black;
+    font-size: 32px;
+}
+
+#css-demo-unit-px{
+    margin: 10px 50px;
+}
+
+#css-demo-unit-em{
+    margin: 10px 50em;
+}
+
+#css-demo-unit-rem {
+    margin: 10px 50rem;
+}
+
+#css-demo-unit-auto {
+    margin: auto; 
+}
+
+#css-demo-unit-percent {
+    margin: 0 20%; 
+}
