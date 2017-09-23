@@ -1,0 +1,44 @@
+p {
+    color: blue;
+    background: lightgray;
+}
+
+html {
+    font-size: 32px;
+    font-family: Open Sans, sans-serif;
+    /*background: blue;*/
+}
+
+.font-demo {
+    font-size: 34px;
+    margin: 10px 100px 10px 200px;
+    color: #090;
+    font-family: sans-serif;
+}
+
+li {
+    font-size: 24px;
+    text-align: center;
+}
+
+#my-text-margin-id {
+    background: red;
+}
+
+#css-box-demo {
+    width: 600px;
+    height: 600px;
+    background: gray;
+    border: 1px dotted black;
+    font-size: 64px;
+    margin: 100px 100px 100px 100px;
+}
+
+#css-box-demo div {
+    width: 400px;
+    height: 400px;
+    background: yellow;
+    border: 2px solid black;
+    margin: 50px auto;
+    text-align: center;
+}
