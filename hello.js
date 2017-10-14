@@ -1,3 +1,5 @@
+import mul from './math.js';
+
 var myHeading = document.querySelector('#div_title');
 var old = myHeading.innerHTML;
 myHeading.innerHTML = old + '<p>Hello!!</p>'
@@ -7,10 +9,6 @@ helloDiv.innerHTML = hello();
 
 function hello() {
     return 'hello';
-}
-
-function mul(x, y) {
-    return x * y;
 }
 
 function showResult() {
@@ -62,13 +60,13 @@ function clearResultHandler(event) {
     document.querySelector('.result').innerHTML = '';
 }
 
-function createButton(id, value) {
+function createButton(parentNode, id, value) {
     var numberButtonElement = document.createElement("input");
     numberButtonElement.setAttribute("type", "button");
     numberButtonElement.setAttribute("id", id);
     numberButtonElement.setAttribute("value", value);
     numberButtonElement.onclick = buttonClickHandler;
-    document.querySelector('.calculate').appendChild(numberButtonElement);
+    parentNode.appendChild(numberButtonElement);
 
     return numberButtonElement;
 }
@@ -88,7 +86,16 @@ var map = {
 }
 
 for(let item in map) {
-    createButton(item, map[item]);
+    var parentNode;
+    if (["mul-1","mul-2","mul-3","mul-4","mul-5"].includes(item)) {
+        parentNode = document.getElementById('number-pad-r1');
+    }
+    else if (["mul-6","mul-7","mul-8","mul-9","mul-0"].includes(item)) {
+        parentNode = document.getElementById('number-pad-r2');
+    } else {
+        parentNode = document.getElementById('number-pad-r3');
+    }
+    createButton(parentNode, item, map[item]);
 }
 
 document.querySelector('#equal').onclick = resultClickHandler;
