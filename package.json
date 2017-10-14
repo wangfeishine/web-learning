@@ -1,0 +1,32 @@
+{
+  "name": "web-learning",
+  "version": "1.0.0",
+  "description": "HTML5 Leaning Course",
+  "main": "hello.js",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^2.7.0"
+  },
+  "scripts": {
+    "start": "gulp server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "echo hello",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangfeishine/web-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangfeishine/web-learning/issues"
+  },
+  "homepage": "https://github.com/wangfeishine/web-learning#readme"
+}
